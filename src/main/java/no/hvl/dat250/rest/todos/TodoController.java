@@ -1,5 +1,4 @@
 package no.hvl.dat250.rest.todos;
-import com.google.gson.Gson;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +10,6 @@ import java.util.*;
 @RequestMapping("/todos")
 public class TodoController {
   public static final String TODO_WITH_THE_ID_X_NOT_FOUND = "Todo with the id %s not found!";
-  private final Gson gson = new Gson();
   private List<Todo> todos = new ArrayList<>();
 
 
