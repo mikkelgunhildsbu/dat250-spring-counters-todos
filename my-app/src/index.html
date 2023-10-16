@@ -1,77 +1,13 @@
-<h1>Todos</h1>
-<table id="todosTable">
-  <tr>
-    <th>Id</th>
-    <th>Description</th>
-    <th>Summary</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Description1</td>
-    <td>Summary1</td>
-    <td>
-      <button class = "deleteBtn">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Description2</td>
-    <td>Summary2</td>
-    <td>
-      <button class = "deleteBtn">Delete</button>
-    </td>
-  </tr>
-</table>
-<button>Refresh</button>
-<h2>Todo</h2>
-<label for="desc">Description:</label><br>
-<input type="text" id="desc" name="desc"><br>
-<label for="sum">Summary:</label><br>
-<input type="text" id="sum" name="sum"><br>
-<button id = "addTodoButton">Add</button>
-
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const deleteButtons = document.querySelectorAll(".deleteBtn");
-    const addTodoButton = document.getElementById("addTodoButton");
-    const description = document.getElementById("desc")
-    const summary = document.getElementById("sum")
-    const tableBody = document.querySelector("#todosTable tbody");
-
-
-    deleteButtons.forEach(button => {
-      button.addEventListener("click", function() {
-        const row = button.closest("tr");
-        row.parentElement.removeChild(row);
-      });
-    });
-
-    addTodoButton.addEventListener("click", function(){
-      const descVal = description.value.trim()
-      const sumVal = summary.value.trim()
-
-      if (descVal && sumVal){
-        const newRow = tableBody.insertRow();
-        newRow.innerHTML = `
-                <td>${tableBody.rows.length + 1}</td>
-                <td>${descVal}</td>
-                <td>${sumVal}</td>
-                <td>
-                    <button class="deleteBtn">Delete</button>
-                </td>
-            `;
-
-        description.value = '';
-        summary.value = '';
-      } else {
-        alert("both fields need to be filled")
-      }
-
-    });
-  });
-
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TodoApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<app-root></app-root>
+</body>
+</html>
